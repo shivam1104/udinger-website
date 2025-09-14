@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UDinger | Your Quantum Readiness Partners</title>
+    <meta name="description" content="Professional quantum consulting services helping businesses optimize operations through quantum computing solutions.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav__brand">
+                <!-- Theme Toggle Button -->
+                <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode">
+                    <svg class="theme-toggle__icon theme-toggle__sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path>
+                    </svg>
+                    <svg class="theme-toggle__icon theme-toggle__moon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                
+                <img src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/67afb9d2-8a97-4772-aed8-8ac631d355c7.png" alt="UDinger Logo" class="brand-logo">
+                <h1 class="brand-title">UDinger</h1>
+            </div>
+            <div class="nav__menu">
+                <a href="#opportunity" class="nav__link">The Opportunity</a>
+                <a href="#services" class="nav__link">What We Offer</a>
+                <a href="#contact" class="nav__link">Get In Touch</a>
+                <button class="btn btn--primary" onclick="scrollToSection('contact')">Start Your Journey</button>
+            </div>
+            <!-- Mobile menu button -->
+            <button class="nav__mobile-toggle" id="mobileToggle" aria-label="Toggle mobile menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- PAGE 1: THE QUANTUM OPPORTUNITY -->
+        <section id="opportunity" class="opportunity-page page-section">
+            <div class="container">
+                <div class="hero-content">
+                    <h2 class="page-title">The Quantum Revolution is Here</h2>
+                    <p class="page-subtitle">Quantum computing is transforming business optimization, machine learning, and complex problem-solving. Organizations that prepare now will have decisive competitive advantages.</p>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number">25.4% CAGR</div>
+                            <p class="stat-description">Global quantum computing market growth, reaching $102.5 billion by 2025</p>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">65%</div>
+                            <p class="stat-description">Of organizations plan to adopt quantum technology within 2-3 years</p>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">70%</div>
+                            <p class="stat-description">Of 2024's total quantum investment already reached in first 5 months of 2025</p>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">Up to 20%</div>
+                            <p class="stat-description">Operational cost reduction possible through quantum optimization in logistics</p>
+                        </div>
+                    </div>
+                    
+                    <div class="cta-section">
+                        <h3 class="cta-title">Is Your Business Quantum-Ready?</h3>
+                        <p class="cta-text">While competitors are still asking "what is quantum computing?", forward-thinking organizations are already optimizing operations, accelerating machine learning, and solving complex problems with quantum advantages.</p>
+                        
+                        <div class="quantum-applications">
+                            <h4 class="applications-title">Quantum Computing Transforms:</h4>
+                            <div class="applications-grid">
+                                <div class="application-item">
+                                    <div class="application-icon">📦</div>
+                                    <div class="application-content">
+                                        <strong>Supply Chain Optimization</strong>
+                                        <p>Reduce logistics costs and improve delivery efficiency through advanced routing algorithms</p>
+                                    </div>
+                                </div>
+                                <div class="application-item">
+                                    <div class="application-icon">📹</div>
+                                    <div class="application-content">
+                                        <strong>Financial Modeling</strong>
+                                        <p>Enhanced risk analysis, portfolio optimization, and real-time trading strategies</p>
+                                    </div>
+                                </div>
+                                <div class="application-item">
+                                    <div class="application-icon">🧠</div>
+                                    <div class="application-content">
+                                        <strong>Machine Learning</strong>
+                                        <p>Accelerated training, improved pattern recognition, and enhanced AI capabilities</p>
+                                    </div>
+                                </div>
+                                <div class="application-item">
+                                    <div class="application-icon">🔬</div>
+                                    <div class="application-content">
+                                        <strong>Complex Simulations</strong>
+                                        <p>Materials science breakthroughs, drug discovery, and process optimization</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn--primary btn--lg" onclick="scrollToSection('contact')">
+                            Assess Your Quantum Readiness
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 2: WHAT WE OFFER -->
+        <section id="services" class="services-page page-section">
+            <div class="container">
+                <div class="services-header">
+                    <h2 class="page-title">Your Quantum Readiness Partners</h2>
+                    <p class="page-subtitle">We help organizations harness quantum computing for business optimization, machine learning acceleration, and competitive advantage through practical, results-driven consulting services.</p>
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">🔍</div>
+                        <h3 class="service-title">Quantum Readiness Assessment</h3>
+                        <p class="service-description">We evaluate your current technology infrastructure and identify where quantum computing can optimize your business operations and create competitive advantages.</p>
+                        <ul class="service-details">
+                            <li>Comprehensive assessment of optimization opportunities across your business processes</li>
+                            <li>Analysis of algorithm improvement potential for existing systems</li>
+                            <li>Strategic roadmap for quantum technology adoption focused on business value</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">💡</div>
+                        <h3 class="service-title">Quantum Use Case Identification</h3>
+                        <p class="service-description">We analyze your business challenges and identify specific quantum applications for optimization, machine learning acceleration, and complex problem-solving.</p>
+                        <ul class="service-details">
+                            <li>Industry-specific quantum optimization analysis for logistics, finance, and operations</li>
+                            <li>ROI modeling for quantum computing implementations in your business context</li>
+                            <li>Prioritization of high-impact quantum use cases for maximum business benefit</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">⚡</div>
+                        <h3 class="service-title">Implementation Support</h3>
+                        <p class="service-description">We help you deploy 1-2 strategic quantum use cases, focusing on optimization and computational advantages that deliver measurable business results.</p>
+                        <ul class="service-details">
+                            <li>Hands-on deployment of quantum optimization solutions</li>
+                            <li>Integration with existing business systems and processes</li>
+                            <li>Partnership with leading quantum cloud providers (IBM, Microsoft, AWS)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">🎓</div>
+                        <h3 class="service-title">Team Training & Education</h3>
+                        <p class="service-description">We upskill your technical teams on quantum computing concepts for optimization and algorithmic improvements, ensuring sustainable quantum capabilities.</p>
+                        <ul class="service-details">
+                            <li>Customized quantum computing education programs focused on business applications</li>
+                            <li>Hands-on training with quantum optimization and machine learning tools</li>
+                            <li>Ongoing support for quantum team development and capability building</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="services-cta">
+                    <h3 class="cta-title">Ready to Optimize with Quantum?</h3>
+                    <p class="cta-text">Every day you wait is a day your competitors might be gaining quantum advantages. Let's discuss how quantum computing can transform your business operations and create competitive differentiation.</p>
+                    <button class="btn btn--primary btn--lg" onclick="scrollToSection('contact')">
+                        Discuss Your Quantum Opportunities
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 3: GET IN TOUCH -->
+        <section id="contact" class="contact-page page-section">
+            <div class="container">
+                <div class="contact-header">
+                    <h2 class="page-title">Ready to Explore Quantum Opportunities?</h2>
+                    <p class="page-subtitle">Let's discuss how quantum computing can create optimization advantages and competitive differentiation for your business. We're here to help you navigate the quantum future.</p>
+                </div>
+                
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3>Get Started Today</h3>
+                        <p>Ready to assess your quantum readiness? We're here to help you understand quantum optimization opportunities and develop a strategic approach for your business.</p>
+                        
+                        <div class="email-section">
+                            <h4>Email Us Directly</h4>
+                            <a href="mailto:info@udinger.com" class="email-link">info@udinger.com</a>
+                            <p class="email-note">We typically respond within 24 hours with initial insights and next steps.</p>
+                        </div>
+                        
+                        <div class="consultation-info">
+                            <h4>What to Expect</h4>
+                            <ul>
+                                <li><strong>Initial Consultation:</strong> 30-minute discovery call to understand your business optimization challenges</li>
+                                <li><strong>Quantum Assessment:</strong> Preliminary evaluation of quantum opportunities in your industry</li>
+                                <li><strong>Strategic Roadmap:</strong> Clear next steps for your quantum readiness journey</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form-container">
+                        <!-- Form configured for Formspree - Replace YOUR_FORM_ID with actual Formspree form ID -->
+                        <form class="contact-form" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                            <h3>Tell Us About Your Business</h3>
+                            
+                            <div id="form-messages"></div>
+                            
+                            <div class="form-group">
+                                <label for="name">Name *</label>
+                                <input type="text" id="name" name="name" required>
+                                <span class="error-message" id="name-error"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required>
+                                <span class="error-message" id="email-error"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="company">Company *</label>
+                                <input type="text" id="company" name="company" required>
+                                <span class="error-message" id="company-error"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="industry">Industry *</label>
+                                <select id="industry" name="industry" required>
+                                    <option value="">Select your industry</option>
+                                    <option value="financial-services">Financial Services</option>
+                                    <option value="healthcare">Healthcare & Pharmaceuticals</option>
+                                    <option value="manufacturing">Manufacturing</option>
+                                    <option value="logistics">Logistics & Supply Chain</option>
+                                    <option value="energy">Energy & Utilities</option>
+                                    <option value="technology">Technology</option>
+                                    <option value="automotive">Automotive</option>
+                                    <option value="aerospace">Aerospace & Defense</option>
+                                    <option value="retail">Retail & E-commerce</option>
+                                    <option value="other">Other</option>
+                                </select>
+                                <span class="error-message" id="industry-error"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="challenges">Current Business Challenges</label>
+                                <textarea id="challenges" name="challenges" rows="3" placeholder="Tell us about your optimization needs, complex problems, or areas where you seek computational advantages..."></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="quantum-interest">Quantum Interest Level *</label>
+                                <select id="quantum-interest" name="quantum-interest" required>
+                                    <option value="">Select your current interest level</option>
+                                    <option value="exploring">Just exploring quantum possibilities</option>
+                                    <option value="optimization">Looking for optimization solutions</option>
+                                    <option value="ml-acceleration">Interested in ML acceleration</option>
+                                    <option value="competitive-advantage">Seeking competitive advantages</option>
+                                    <option value="ready-to-implement">Ready to implement quantum solutions</option>
+                                </select>
+                                <span class="error-message" id="quantum-interest-error"></span>
+                            </div>
+                            
+                            <button type="submit" class="btn btn--primary btn--full" id="submit-button">
+                                Send My Inquiry
+                            </button>
+                        </form>
+                        
+                        <!-- Configuration Note -->
+                        <div class="email-config-note">
+                            <p><small><strong>Setup Note:</strong> Replace "YOUR_FORM_ID" with your Formspree form ID to enable email delivery to info@udinger.com</small></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-footer">
+                    <p class="closing-statement">At UDinger, we believe every business has quantum optimization opportunities waiting to be discovered. Let's find yours together.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/67afb9d2-8a97-4772-aed8-8ac631d355c7.png" alt="UDinger Logo" class="footer-logo">
+                    <span class="footer-text">UDinger</span>
+                </div>
+                <div class="footer-contact">
+                    <a href="mailto:info@udinger.com" class="footer-email">info@udinger.com</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 UDinger. Quantum consulting for business optimization and competitive advantage.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
