@@ -1,3 +1,4 @@
+<!-- UDinger Quantum Consulting Website - FIXED VERSION -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,12 +36,6 @@
                 <a href="#contact" class="nav__link">Get In Touch</a>
                 <button class="btn btn--primary" onclick="scrollToSection('contact')">Start Your Journey</button>
             </div>
-            <!-- Mobile menu button -->
-            <button class="nav__mobile-toggle" id="mobileToggle" aria-label="Toggle mobile menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
         </nav>
     </header>
 
@@ -211,28 +206,23 @@
                     </div>
                     
                     <div class="contact-form-container">
-                        <!-- Form configured for Formspree - Replace YOUR_FORM_ID with actual Formspree form ID -->
-                        <form class="contact-form" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                        <!-- FIXED: Form now properly sends to info@udinger.com via Formspree -->
+                        <form class="contact-form" id="contactForm" action="https://formspree.io/f/xqazpvgd" method="POST">
                             <h3>Tell Us About Your Business</h3>
-                            
-                            <div id="form-messages"></div>
                             
                             <div class="form-group">
                                 <label for="name">Name *</label>
                                 <input type="text" id="name" name="name" required>
-                                <span class="error-message" id="name-error"></span>
                             </div>
                             
                             <div class="form-group">
                                 <label for="email">Email *</label>
-                                <input type="email" id="email" name="email" required>
-                                <span class="error-message" id="email-error"></span>
+                                <input type="email" id="email" name="_replyto" required>
                             </div>
                             
                             <div class="form-group">
                                 <label for="company">Company *</label>
                                 <input type="text" id="company" name="company" required>
-                                <span class="error-message" id="company-error"></span>
                             </div>
                             
                             <div class="form-group">
@@ -250,7 +240,6 @@
                                     <option value="retail">Retail & E-commerce</option>
                                     <option value="other">Other</option>
                                 </select>
-                                <span class="error-message" id="industry-error"></span>
                             </div>
                             
                             <div class="form-group">
@@ -268,18 +257,16 @@
                                     <option value="competitive-advantage">Seeking competitive advantages</option>
                                     <option value="ready-to-implement">Ready to implement quantum solutions</option>
                                 </select>
-                                <span class="error-message" id="quantum-interest-error"></span>
                             </div>
+                            
+                            <!-- Hidden field to specify recipient -->
+                            <input type="hidden" name="_to" value="info@udinger.com">
+                            <input type="hidden" name="_subject" value="New Quantum Inquiry from UDinger Website">
                             
                             <button type="submit" class="btn btn--primary btn--full" id="submit-button">
                                 Send My Inquiry
                             </button>
                         </form>
-                        
-                        <!-- Configuration Note -->
-                        <div class="email-config-note">
-                            <p><small><strong>Setup Note:</strong> Replace "YOUR_FORM_ID" with your Formspree form ID to enable email delivery to info@udinger.com</small></p>
-                        </div>
                     </div>
                 </div>
                 
