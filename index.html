@@ -1,4 +1,3 @@
-<!-- UDinger Quantum Consulting Website - FIXED VERSION -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -198,15 +197,15 @@
                         <div class="consultation-info">
                             <h4>What to Expect</h4>
                             <ul>
-                                <li><strong>Initial Consultation:</strong> 30-minute discovery call to understand your business optimization challenges</li>
-                                <li><strong>Quantum Assessment:</strong> Preliminary evaluation of quantum opportunities in your industry</li>
-                                <li><strong>Strategic Roadmap:</strong> Clear next steps for your quantum readiness journey</li>
+                                <li><strong>Initial Discussion:</strong> We'll explore what you need vs how we can help with quantum optimization for your specific business challenges</li>
+                                <li><strong>Quantum Assessment:</strong> Preliminary evaluation of quantum opportunities and potential ROI in your industry context</li>
+                                <li><strong>Collaboration Plan:</strong> If there's a good fit, we'll create a strategic plan to start working together on your quantum readiness journey</li>
                             </ul>
                         </div>
                     </div>
                     
                     <div class="contact-form-container">
-                        <!-- FIXED: Form now properly sends to info@udinger.com via Formspree -->
+                        <!-- FIXED FORM: Proper field names and validation -->
                         <form class="contact-form" id="contactForm" action="https://formspree.io/f/xqazpvgd" method="POST">
                             <h3>Tell Us About Your Business</h3>
                             
@@ -217,7 +216,7 @@
                             
                             <div class="form-group">
                                 <label for="email">Email *</label>
-                                <input type="email" id="email" name="_replyto" required>
+                                <input type="email" id="email" name="email" required>
                             </div>
                             
                             <div class="form-group">
@@ -249,7 +248,7 @@
                             
                             <div class="form-group">
                                 <label for="quantum-interest">Quantum Interest Level *</label>
-                                <select id="quantum-interest" name="quantum-interest" required>
+                                <select id="quantum-interest" name="quantum_interest" required>
                                     <option value="">Select your current interest level</option>
                                     <option value="exploring">Just exploring quantum possibilities</option>
                                     <option value="optimization">Looking for optimization solutions</option>
@@ -259,9 +258,10 @@
                                 </select>
                             </div>
                             
-                            <!-- Hidden field to specify recipient -->
+                            <!-- Hidden fields for Formspree -->
                             <input type="hidden" name="_to" value="info@udinger.com">
                             <input type="hidden" name="_subject" value="New Quantum Inquiry from UDinger Website">
+                            <input type="hidden" name="_replyto" value="">
                             
                             <button type="submit" class="btn btn--primary btn--full" id="submit-button">
                                 Send My Inquiry
