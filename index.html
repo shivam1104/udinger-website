@@ -11,8 +11,23 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Quantum Computer Background -->
-    <div class="parallax-bg"></div>
+    <!-- Quantum Computer Background with Photon -->
+    <div class="quantum-background">
+        <div class="quantum-circuit">
+            <!-- Quantum circuit paths -->
+            <div class="circuit-line circuit-line-1"></div>
+            <div class="circuit-line circuit-line-2"></div>
+            <div class="circuit-line circuit-line-3"></div>
+            
+            <!-- Quantum gates -->
+            <div class="quantum-gate gate-1"></div>
+            <div class="quantum-gate gate-2"></div>
+            <div class="quantum-gate gate-3"></div>
+            
+            <!-- Photon particle -->
+            <div class="photon"></div>
+        </div>
+    </div>
     
     <!-- Navigation Header -->
     <header class="header">
@@ -26,22 +41,12 @@
                 <a href="#opportunity" class="nav__link">The Opportunity</a>
                 <a href="#contact" class="nav__link">Get In Touch</a>
                 <button class="btn btn--primary" onclick="scrollToSection('contact')">Start Your Journey</button>
-                <!-- Theme Toggle Button - TOP RIGHT -->
-                <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode">
-                    <svg class="theme-toggle__icon theme-toggle__sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path>
-                    </svg>
-                    <svg class="theme-toggle__icon theme-toggle__moon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                </button>
             </div>
         </nav>
     </header>
 
     <main>
-        <!-- PAGE 1: YOUR QUANTUM READINESS PARTNERS (MOVED TO TOP) -->
+        <!-- PAGE 1: YOUR QUANTUM READINESS PARTNERS -->
         <section id="services" class="services-page page-section">
             <div class="container">
                 <div class="services-header">
@@ -125,7 +130,12 @@
                             <div class="applications-grid">
                                 <div class="application-item">
                                     <div class="application-icon">
-                                        <img src="https://user-gen-media-assets.s3.amazonaws.com/perplexity_images/image_55.png" alt="Supply Chain Optimization" class="app-icon-img">
+                                        <!-- CSS-based Supply Chain Icon -->
+                                        <div class="icon-supply-chain">
+                                            <div class="globe"></div>
+                                            <div class="arrows"></div>
+                                            <div class="nodes"></div>
+                                        </div>
                                     </div>
                                     <div class="application-content">
                                         <strong>Supply Chain Optimization</strong>
@@ -134,7 +144,12 @@
                                 </div>
                                 <div class="application-item">
                                     <div class="application-icon">
-                                        <img src="https://user-gen-media-assets.s3.amazonaws.com/perplexity_images/image_56.png" alt="Financial Modeling" class="app-icon-img">
+                                        <!-- CSS-based Financial Modeling Icon -->
+                                        <div class="icon-financial">
+                                            <div class="chart-bars"></div>
+                                            <div class="trend-line"></div>
+                                            <div class="dollar-sign">$</div>
+                                        </div>
                                     </div>
                                     <div class="application-content">
                                         <strong>Financial Modeling</strong>
@@ -143,7 +158,12 @@
                                 </div>
                                 <div class="application-item">
                                     <div class="application-icon">
-                                        <img src="https://user-gen-media-assets.s3.amazonaws.com/perplexity_images/image_57.png" alt="Machine Learning" class="app-icon-img">
+                                        <!-- CSS-based Machine Learning Icon -->
+                                        <div class="icon-ml">
+                                            <div class="brain"></div>
+                                            <div class="neural-connections"></div>
+                                            <div class="ai-chip">AI</div>
+                                        </div>
                                     </div>
                                     <div class="application-content">
                                         <strong>Machine Learning</strong>
@@ -191,8 +211,8 @@
                     </div>
                     
                     <div class="contact-form-container">
-                        <!-- FIXED FORM: Works with mailto -->
-                        <form class="contact-form" id="contactForm" action="mailto:info@udinger.com" method="POST" enctype="text/plain">
+                        <!-- WORKING FORM: Sends email directly to info@udinger.com -->
+                        <form class="contact-form" id="contactForm">
                             <h3>Tell Us About Your Business</h3>
                             
                             <div class="form-group">
