@@ -1,89 +1,89 @@
 /**
- * UDinger Quantum Consulting Website - FULLY FIXED VERSION
- * All issues resolved: theme toggle, form validation, and content updates
+ * UDinger Quantum Consulting Website - FINAL WORKING VERSION
+ * Fixed theme toggle, form, and all requested features
  */
 
-// Configuration
-const CONFIG = {
-  THEME_STORAGE_KEY: 'udinger-theme',
-  THEMES: {
-    LIGHT: 'light',
-    DARK: 'dark'
-  }
-};
-
-// Global state
-let currentTheme = CONFIG.THEMES.LIGHT;
-
-// ==========================================================================
-// THEME MANAGEMENT - COMPLETELY FIXED
-// ==========================================================================
-
+// Theme management - WORKING VERSION
 function initializeTheme() {
   console.log('Initializing theme system...');
   
-  // Get saved theme or use light as default
-  const savedTheme = localStorage.getItem(CONFIG.THEME_STORAGE_KEY);
-  currentTheme = savedTheme || CONFIG.THEMES.LIGHT;
+  // Get system preference
+  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const savedTheme = localStorage.getItem('udinger-theme');
   
-  // Apply theme immediately
-  applyTheme(currentTheme);
+  // Set initial theme
+  const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
+  applyTheme(initialTheme);
   
-  // Set up theme toggle button
+  // Setup toggle button
   const themeToggle = document.getElementById('themeToggle');
   if (themeToggle) {
-    // Remove any existing listeners
-    themeToggle.replaceWith(themeToggle.cloneNode(true));
-    const newToggle = document.getElementById('themeToggle');
-    newToggle.addEventListener('click', handleThemeToggle);
-    console.log('Theme toggle initialized successfully');
+    themeToggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      
+      console.log(`Switching theme from ${currentTheme} to ${newTheme}`);
+      applyTheme(newTheme);
+    });
+    console.log('Theme toggle button initialized');
+  } else {
+    console.error('Theme toggle button not found');
   }
 }
 
 function applyTheme(theme) {
   console.log(`Applying theme: ${theme}`);
   
-  // Apply to both html and body elements
+  // Apply to document
   document.documentElement.setAttribute('data-theme', theme);
   document.body.setAttribute('data-theme', theme);
   
-  // Force update CSS custom properties
-  if (theme === CONFIG.THEMES.DARK) {
-    document.documentElement.style.setProperty('--bg-primary', '#0f172a');
-    document.documentElement.style.setProperty('--bg-secondary', '#1e293b');
-    document.documentElement.style.setProperty('--text-primary', '#f8fafc');
-    document.documentElement.style.setProperty('--text-secondary', '#cbd5e1');
-    document.documentElement.style.setProperty('--border', '#475569');
+  // Force CSS variable updates
+  const root = document.documentElement;
+  if (theme === 'dark') {
+    root.style.setProperty('--bg-primary', '#0f172a');
+    root.style.setProperty('--bg-secondary', '#1e293b');
+    root.style.setProperty('--bg-tertiary', '#334155');
+    root.style.setProperty('--text-primary', '#f8fafc');
+    root.style.setProperty('--text-secondary', '#cbd5e1');
+    root.style.setProperty('--border', '#475569');
   } else {
-    document.documentElement.style.setProperty('--bg-primary', '#ffffff');
-    document.documentElement.style.setProperty('--bg-secondary', '#f8fafc');
-    document.documentElement.style.setProperty('--text-primary', '#1e293b');
-    document.documentElement.style.setProperty('--text-secondary', '#475569');
-    document.documentElement.style.setProperty('--border', '#e2e8f0');
+    root.style.setProperty('--bg-primary', '#ffffff');
+    root.style.setProperty('--bg-secondary', '#f8fafc');
+    root.style.setProperty('--bg-tertiary', '#f1f5f9');
+    root.style.setProperty('--text-primary', '#1e293b');
+    root.style.setProperty('--text-secondary', '#475569');
+    root.style.setProperty('--border', '#e2e8f0');
   }
   
-  currentTheme = theme;
-  localStorage.setItem(CONFIG.THEME_STORAGE_KEY, theme);
+  // Save theme
+  localStorage.setItem('udinger-theme', theme);
   
   console.log(`Theme ${theme} applied successfully`);
 }
 
-function handleThemeToggle(e) {
-  e.preventDefault();
-  e.stopPropagation();
+// Parallax effect for quantum computer background
+function initializeParallax() {
+  console.log('Initializing parallax effect...');
   
-  console.log('Theme toggle clicked - current theme:', currentTheme);
+  const parallaxElements = document.querySelectorAll('.parallax-bg');
   
-  const newTheme = currentTheme === CONFIG.THEMES.LIGHT ? CONFIG.THEMES.DARK : CONFIG.THEMES.LIGHT;
-  applyTheme(newTheme);
+  function updateParallax() {
+    const scrolled = window.pageYOffset;
+    const rate = scrolled * -0.5; // Adjust speed
+    
+    parallaxElements.forEach(element => {
+      element.style.transform = `translateY(${rate}px)`;
+    });
+  }
   
-  console.log('Theme switched to:', newTheme);
+  window.addEventListener('scroll', updateParallax, { passive: true });
 }
 
-// ==========================================================================
-// NAVIGATION
-// ==========================================================================
-
+// Smooth scrolling navigation
 function scrollToSection(sectionId) {
   const element = document.getElementById(sectionId);
   if (!element) return;
@@ -112,36 +112,23 @@ function initializeNavigation() {
   });
 }
 
-// ==========================================================================
-// FORM HANDLING - FIXED VALIDATION
-// ==========================================================================
-
+// Form handling
 function initializeContactForm() {
   const form = document.getElementById('contactForm');
-  if (!form) {
-    console.log('Contact form not found');
-    return;
-  }
-  
-  console.log('Initializing contact form');
+  if (!form) return;
   
   form.addEventListener('submit', function(e) {
-    console.log('Form submitted');
-    
-    // Get all form fields
+    // Basic validation
     const name = document.getElementById('name')?.value?.trim();
     const email = document.getElementById('email')?.value?.trim();
     const company = document.getElementById('company')?.value?.trim();
     const industry = document.getElementById('industry')?.value?.trim();
     const quantumInterest = document.getElementById('quantum-interest')?.value?.trim();
     
-    console.log('Form data:', { name, email, company, industry, quantumInterest });
-    
-    // Check required fields
     if (!name || !email || !company || !industry || !quantumInterest) {
       e.preventDefault();
       alert('Please fill in all required fields (marked with *)');
-      return false;
+      return;
     }
     
     // Email validation
@@ -149,54 +136,43 @@ function initializeContactForm() {
     if (!emailRegex.test(email)) {
       e.preventDefault();
       alert('Please enter a valid email address');
-      return false;
+      return;
     }
     
-    // If validation passes, show loading state
-    const submitButton = form.querySelector('#submit-button');
+    // Show loading state
+    const submitButton = this.querySelector('#submit-button');
     if (submitButton) {
       submitButton.disabled = true;
       submitButton.textContent = 'Sending...';
       
-      // Reset button after delay (form will submit)
       setTimeout(() => {
         submitButton.disabled = false;
         submitButton.textContent = 'Send My Inquiry';
       }, 3000);
     }
-    
-    console.log('Form validation passed, submitting...');
-    // Form will submit naturally to Formspree
   });
 }
 
-// ==========================================================================
-// INITIALIZATION
-// ==========================================================================
-
+// Initialize everything
 function initializeWebsite() {
   console.log('Initializing UDinger website...');
   
-  // Wait a moment for DOM to be fully ready
-  setTimeout(() => {
-    // Initialize theme (most important)
-    initializeTheme();
-    
-    // Initialize other functionality
-    initializeNavigation();
-    initializeContactForm();
-    
-    // Set up email click handlers
-    const emailLinks = document.querySelectorAll('.email-link');
-    emailLinks.forEach(link => {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        window.location.href = `mailto:${this.textContent.trim()}`;
-      });
+  // Initialize all functionality
+  initializeTheme();
+  initializeParallax();
+  initializeNavigation();
+  initializeContactForm();
+  
+  // Email link handlers
+  const emailLinks = document.querySelectorAll('.email-link');
+  emailLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      window.location.href = `mailto:${this.textContent.trim()}`;
     });
-    
-    console.log('Website initialized successfully');
-  }, 100);
+  });
+  
+  console.log('Website initialized successfully');
 }
 
 // Initialize when DOM is ready
@@ -208,4 +184,3 @@ if (document.readyState === 'loading') {
 
 // Make functions globally available
 window.scrollToSection = scrollToSection;
-window.handleThemeToggle = handleThemeToggle;
