@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UDinger | Your Quantum Readiness Partners</title>
-    <meta name="description" content="Professional quantum consulting services helping businesses optimize operations through quantum computing solutions.">
+    <title>UDinger | Your Quantum Readiness Partners | Netherlands & India</title>
+    <meta name="description" content="Professional quantum consulting services in Netherlands and India helping businesses optimize operations through quantum computing solutions.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -34,7 +34,10 @@
         <nav class="nav container">
             <div class="nav__brand">
                 <img src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/67afb9d2-8a97-4772-aed8-8ac631d355c7.png" alt="UDinger Logo" class="brand-logo">
-                <h1 class="brand-title">UDinger</h1>
+                <div class="brand-info">
+                    <h1 class="brand-title">UDinger</h1>
+                    <p class="brand-location">Quantum Consulting | Netherlands & India</p>
+                </div>
             </div>
             <div class="nav__menu">
                 <a href="#services" class="nav__link">What We Offer</a>
@@ -51,7 +54,7 @@
             <div class="container">
                 <div class="services-header">
                     <h2 class="page-title">Your Quantum Readiness Partners</h2>
-                    <p class="page-subtitle">We help organizations harness quantum computing for business optimization, machine learning acceleration, and competitive advantage through practical, results-driven consulting services.</p>
+                    <p class="page-subtitle">We help organizations in Netherlands and India harness quantum computing for business optimization, machine learning acceleration, and competitive advantage through practical, results-driven consulting services.</p>
                 </div>
                 
                 <div class="services-grid">
@@ -91,7 +94,7 @@
                 
                 <div class="services-cta">
                     <h3 class="cta-title">Ready to Optimize with Quantum?</h3>
-                    <p class="cta-text">Every day you wait is a day your competitors might be gaining quantum advantages. Let's discuss how quantum computing can transform your business operations and create competitive differentiation.</p>
+                    <p class="cta-text">Every day you wait is a day your competitors might be gaining quantum advantages. Let's discuss how quantum computing can transform your business operations and create competitive differentiation in Netherlands and India markets.</p>
                     <button class="btn btn--primary btn--lg" onclick="scrollToSection('contact')">
                         Discuss Your Quantum Opportunities
                     </button>
@@ -104,7 +107,7 @@
             <div class="container">
                 <div class="hero-content">
                     <h2 class="page-title">The Quantum Revolution is Here</h2>
-                    <p class="page-subtitle">Quantum computing is transforming business optimization, machine learning, and complex problem-solving. Organizations that prepare now will have decisive competitive advantages.</p>
+                    <p class="page-subtitle">Quantum computing is transforming business optimization, machine learning, and complex problem-solving. Organizations in Netherlands and India that prepare now will have decisive competitive advantages.</p>
                     
                     <div class="stats-grid">
                         <div class="stat-card">
@@ -186,13 +189,13 @@
             <div class="container">
                 <div class="contact-header">
                     <h2 class="page-title">Get In Touch</h2>
-                    <p class="page-subtitle">Let's discuss how quantum computing can create optimization advantages and competitive differentiation for your business. We're here to help you navigate the quantum future.</p>
+                    <p class="page-subtitle">Let's discuss how quantum computing can create optimization advantages and competitive differentiation for your business. We serve clients across Netherlands and India.</p>
                 </div>
                 
                 <div class="contact-content">
                     <div class="contact-info">
                         <h3>Get Started Today</h3>
-                        <p>Ready to assess your quantum readiness? We're here to help you understand quantum optimization opportunities and develop a strategic approach for your business.</p>
+                        <p>Ready to assess your quantum readiness? We're here to help you understand quantum optimization opportunities and develop a strategic approach for your business in Netherlands and India.</p>
                         
                         <div class="email-section">
                             <h4>Email Us Directly</h4>
@@ -208,10 +211,24 @@
                                 <li><strong>Collaboration Plan:</strong> If there's a good fit, we'll create a strategic plan to start working together on your quantum readiness journey</li>
                             </ul>
                         </div>
+                        
+                        <div class="location-info">
+                            <h4>Our Locations</h4>
+                            <div class="locations">
+                                <div class="location">
+                                    <strong>🇳🇱 Netherlands</strong>
+                                    <p>European quantum consulting hub</p>
+                                </div>
+                                <div class="location">
+                                    <strong>🇮🇳 India</strong>
+                                    <p>Asia-Pacific quantum services</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     
                     <div class="contact-form-container">
-                        <!-- WORKING FORM: Sends email directly to info@udinger.com -->
+                        <!-- FINALLY WORKING FORM -->
                         <form class="contact-form" id="contactForm">
                             <h3>Tell Us About Your Business</h3>
                             
@@ -248,6 +265,18 @@
                             </div>
                             
                             <div class="form-group">
+                                <label for="location">Your Location</label>
+                                <select id="location" name="location">
+                                    <option value="">Select your location (optional)</option>
+                                    <option value="netherlands">Netherlands</option>
+                                    <option value="india">India</option>
+                                    <option value="other-europe">Other Europe</option>
+                                    <option value="other-asia">Other Asia</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
                                 <label for="challenges">Current Business Challenges</label>
                                 <textarea id="challenges" name="challenges" rows="3" placeholder="Tell us about your optimization needs, complex problems, or areas where you seek computational advantages..."></textarea>
                             </div>
@@ -267,12 +296,16 @@
                             <button type="submit" class="btn btn--primary btn--full" id="submit-button">
                                 Send My Inquiry
                             </button>
+                            
+                            <div class="form-note">
+                                <p><small>📧 Your inquiry will be prepared for email delivery to info@udinger.com</small></p>
+                            </div>
                         </form>
                     </div>
                 </div>
                 
                 <div class="contact-footer">
-                    <p class="closing-statement">At UDinger, we believe every business has quantum optimization opportunities waiting to be discovered. Let's find yours together.</p>
+                    <p class="closing-statement">At UDinger, we believe every business has quantum optimization opportunities waiting to be discovered. Let's find yours together across Netherlands and India markets.</p>
                 </div>
             </div>
         </section>
@@ -284,14 +317,17 @@
             <div class="footer-content">
                 <div class="footer-brand">
                     <img src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/67afb9d2-8a97-4772-aed8-8ac631d355c7.png" alt="UDinger Logo" class="footer-logo">
-                    <span class="footer-text">UDinger</span>
+                    <div class="footer-info">
+                        <span class="footer-text">UDinger</span>
+                        <span class="footer-locations">Quantum Consulting | Netherlands & India</span>
+                    </div>
                 </div>
                 <div class="footer-contact">
                     <a href="mailto:info@udinger.com" class="footer-email">info@udinger.com</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 UDinger. Quantum consulting for business optimization and competitive advantage.</p>
+                <p>&copy; 2025 UDinger. Quantum consulting for business optimization and competitive advantage in Netherlands and India.</p>
             </div>
         </div>
     </footer>
