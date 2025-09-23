@@ -1,7 +1,71 @@
 /**
- * UDinger Quantum Consulting Website - FORM FINALLY FIXED
- * Working form without external dependencies + location info
+ * UDinger Quantum Consulting Website - WITH WORKING THEME TOGGLE
+ * Logo visibility fixed, training added, locations styled
  */
+
+// Theme management - WORKING VERSION
+function initializeTheme() {
+  console.log('Initializing theme system...');
+  
+  // Get system preference
+  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const savedTheme = localStorage.getItem('udinger-theme');
+  
+  // Set initial theme
+  const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
+  applyTheme(initialTheme);
+  
+  // Setup toggle button
+  const themeToggle = document.getElementById('themeToggle');
+  if (themeToggle) {
+    themeToggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      
+      console.log(`Switching theme from ${currentTheme} to ${newTheme}`);
+      applyTheme(newTheme);
+    });
+    console.log('Theme toggle button initialized');
+  } else {
+    console.error('Theme toggle button not found');
+  }
+}
+
+function applyTheme(theme) {
+  console.log(`Applying theme: ${theme}`);
+  
+  // Apply to document
+  document.documentElement.setAttribute('data-theme', theme);
+  document.body.setAttribute('data-theme', theme);
+  
+  // Force CSS variable updates
+  const root = document.documentElement;
+  if (theme === 'dark') {
+    root.style.setProperty('--bg-primary', '#0f172a');
+    root.style.setProperty('--bg-secondary', '#1e293b');
+    root.style.setProperty('--bg-tertiary', '#334155');
+    root.style.setProperty('--text-primary', '#f8fafc');
+    root.style.setProperty('--text-secondary', '#cbd5e1');
+    root.style.setProperty('--border', '#475569');
+    root.style.setProperty('--shadow', 'rgba(0, 0, 0, 0.3)');
+  } else {
+    root.style.setProperty('--bg-primary', '#ffffff');
+    root.style.setProperty('--bg-secondary', '#f8fafc');
+    root.style.setProperty('--bg-tertiary', '#f1f5f9');
+    root.style.setProperty('--text-primary', '#1e293b');
+    root.style.setProperty('--text-secondary', '#475569');
+    root.style.setProperty('--border', '#e2e8f0');
+    root.style.setProperty('--shadow', 'rgba(0, 0, 0, 0.1)');
+  }
+  
+  // Save theme
+  localStorage.setItem('udinger-theme', theme);
+  
+  console.log(`Theme ${theme} applied successfully`);
+}
 
 // Photon animation that moves as user scrolls
 function initializePhotonAnimation() {
@@ -60,7 +124,7 @@ function initializeNavigation() {
   });
 }
 
-// Form handling - WORKING VERSION WITH NETLIFY FORMS
+// Form handling - WORKING VERSION
 function initializeContactForm() {
   const form = document.getElementById('contactForm');
   if (!form) {
@@ -81,6 +145,7 @@ function initializeContactForm() {
       email: document.getElementById('email')?.value?.trim() || '',
       company: document.getElementById('company')?.value?.trim() || '',
       industry: document.getElementById('industry')?.value?.trim() || '',
+      location: document.getElementById('location')?.value?.trim() || 'Not specified',
       challenges: document.getElementById('challenges')?.value?.trim() || '',
       quantumInterest: document.getElementById('quantum-interest')?.value?.trim() || ''
     };
@@ -108,12 +173,13 @@ function initializeContactForm() {
     
     // Create email body
     const emailBody = `
-New Quantum Consulting Inquiry from UDinger Website
+New Quantum Consulting & Training Inquiry from UDinger Website
 
 Name: ${formData.name}
 Email: ${formData.email}
 Company: ${formData.company}
 Industry: ${formData.industry}
+Location: ${formData.location}
 Quantum Interest Level: ${formData.quantumInterest}
 
 Business Challenges:
@@ -123,24 +189,12 @@ ${formData.challenges || 'Not specified'}
 Sent from UDinger.com contact form
     `.trim();
     
-    // Try multiple methods to send the email
-    
-    // Method 1: Use Web3Forms (most reliable)
-    const web3FormsData = new FormData();
-    web3FormsData.append('access_key', 'YOUR_WEB3FORMS_KEY'); // You'll need to get this
-    web3FormsData.append('subject', `New Quantum Inquiry from ${formData.name} - ${formData.company}`);
-    web3FormsData.append('email', formData.email);
-    web3FormsData.append('name', formData.name);
-    web3FormsData.append('message', emailBody);
-    web3FormsData.append('to', 'info@udinger.com');
-    
-    // Since external APIs might fail, let's use a backup method
-    // Method 2: Create mailto link with all data
+    // Create mailto link with all data
     const mailtoSubject = encodeURIComponent(`New Quantum Inquiry from ${formData.name} - ${formData.company}`);
-    const mailtoBody = encodeURIComponent(emailBody);
-    const mailtoLink = `mailto:info@udinger.com?subject=${mailtoSubject}&body=${mailtoBody}`;
+    const mailtoBodyEncoded = encodeURIComponent(emailBody);
+    const mailtoLink = `mailto:info@udinger.com?subject=${mailtoSubject}&body=${mailtoBodyEncoded}`;
     
-    // Method 3: Show success message and provide copy-paste data
+    // Show success dialog with options
     setTimeout(() => {
       // Reset button first
       submitButton.disabled = false;
@@ -150,7 +204,7 @@ Sent from UDinger.com contact form
       const successMessage = `
 Thank you ${formData.name}! 
 
-Your inquiry has been prepared. To complete the submission:
+Your quantum consulting & training inquiry has been prepared. To complete the submission:
 
 1. Click "Open Email" below to send via your email client, OR
 2. Copy the information below and email it to info@udinger.com
@@ -160,7 +214,7 @@ INQUIRY DETAILS TO COPY:
 ${emailBody}
 ---
 
-We'll respond within 24 hours with quantum optimization insights for your business.
+We'll respond within 24 hours with quantum optimization insights and training options for your business.
       `;
       
       if (confirm(successMessage + '\n\nClick OK to open your email client, or Cancel to copy the information instead.')) {
@@ -196,6 +250,7 @@ function initializeWebsite() {
   console.log('Initializing UDinger website...');
   
   // Initialize all functionality
+  initializeTheme();
   initializePhotonAnimation();
   initializeNavigation();
   initializeContactForm();
