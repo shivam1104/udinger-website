@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UDinger | Your Quantum Readiness Partners | Netherlands & India</title>
-    <meta name="description" content="Professional quantum consulting services in Netherlands and India helping businesses optimize operations through quantum computing solutions.">
+    <meta name="description" content="Professional quantum consulting and training services in Netherlands and India helping businesses optimize operations through quantum computing solutions.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -36,7 +36,7 @@
                 <img src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/67afb9d2-8a97-4772-aed8-8ac631d355c7.png" alt="UDinger Logo" class="brand-logo">
                 <div class="brand-info">
                     <h1 class="brand-title">UDinger</h1>
-                    <p class="brand-location">Quantum Consulting | Netherlands & India</p>
+                    <p class="brand-location">Quantum Computing Consulting & Training | <span class="country-names">Netherlands & India</span></p>
                 </div>
             </div>
             <div class="nav__menu">
@@ -44,6 +44,16 @@
                 <a href="#opportunity" class="nav__link">The Opportunity</a>
                 <a href="#contact" class="nav__link">Get In Touch</a>
                 <button class="btn btn--primary" onclick="scrollToSection('contact')">Start Your Journey</button>
+                <!-- Theme Toggle Button -->
+                <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode">
+                    <svg class="theme-toggle__icon theme-toggle__sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path>
+                    </svg>
+                    <svg class="theme-toggle__icon theme-toggle__moon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
             </div>
         </nav>
     </header>
@@ -54,7 +64,7 @@
             <div class="container">
                 <div class="services-header">
                     <h2 class="page-title">Your Quantum Readiness Partners</h2>
-                    <p class="page-subtitle">We help organizations in Netherlands and India harness quantum computing for business optimization, machine learning acceleration, and competitive advantage through practical, results-driven consulting services.</p>
+                    <p class="page-subtitle">We help organizations in Netherlands and India harness quantum computing for business optimization, machine learning acceleration, and competitive advantage through practical, results-driven consulting and training services.</p>
                 </div>
                 
                 <div class="services-grid">
@@ -82,11 +92,11 @@
                     
                     <div class="service-card">
                         <div class="service-icon">⚡</div>
-                        <h3 class="service-title">Implementation Support</h3>
-                        <p class="service-description">We help you deploy 1-2 strategic quantum use cases, focusing on optimization and computational advantages that deliver measurable business results.</p>
+                        <h3 class="service-title">Implementation & Training Support</h3>
+                        <p class="service-description">We help you deploy strategic quantum use cases and train your teams on quantum computing concepts, ensuring sustainable quantum capabilities within your organization.</p>
                         <ul class="service-details">
                             <li>Hands-on deployment of quantum optimization solutions</li>
-                            <li>Integration with existing business systems and processes</li>
+                            <li>Comprehensive training programs for technical teams</li>
                             <li>Partnership with leading quantum cloud providers (IBM, Microsoft, AWS)</li>
                         </ul>
                     </div>
@@ -217,18 +227,18 @@
                             <div class="locations">
                                 <div class="location">
                                     <strong>🇳🇱 Netherlands</strong>
-                                    <p>European quantum consulting hub</p>
+                                    <p>European quantum consulting & training hub</p>
                                 </div>
                                 <div class="location">
                                     <strong>🇮🇳 India</strong>
-                                    <p>Asia-Pacific quantum services</p>
+                                    <p>Asia-Pacific quantum services & training</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     
                     <div class="contact-form-container">
-                        <!-- FINALLY WORKING FORM -->
+                        <!-- WORKING FORM -->
                         <form class="contact-form" id="contactForm">
                             <h3>Tell Us About Your Business</h3>
                             
@@ -290,6 +300,7 @@
                                     <option value="ml-acceleration">Interested in ML acceleration</option>
                                     <option value="competitive-advantage">Seeking competitive advantages</option>
                                     <option value="ready-to-implement">Ready to implement quantum solutions</option>
+                                    <option value="training">Need quantum training for our team</option>
                                 </select>
                             </div>
                             
@@ -319,7 +330,7 @@
                     <img src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/67afb9d2-8a97-4772-aed8-8ac631d355c7.png" alt="UDinger Logo" class="footer-logo">
                     <div class="footer-info">
                         <span class="footer-text">UDinger</span>
-                        <span class="footer-locations">Quantum Consulting | Netherlands & India</span>
+                        <span class="footer-locations">Quantum Computing Consulting & Training | <span class="country-names-footer">Netherlands & India</span></span>
                     </div>
                 </div>
                 <div class="footer-contact">
@@ -327,7 +338,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 UDinger. Quantum consulting for business optimization and competitive advantage in Netherlands and India.</p>
+                <p>&copy; 2025 UDinger. Quantum computing consulting and training for business optimization and competitive advantage in Netherlands and India.</p>
             </div>
         </div>
     </footer>
