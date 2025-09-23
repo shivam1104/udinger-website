@@ -7,7 +7,7 @@
     <meta name="description" content="Professional quantum consulting and training services in Netherlands and India helping businesses optimize operations through quantum computing solutions.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -29,14 +29,17 @@
         </div>
     </div>
     
-    <!-- Navigation Header -->
+    <!-- Professional Navigation Header -->
     <header class="header">
         <nav class="nav container">
             <div class="nav__brand">
                 <img src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/67afb9d2-8a97-4772-aed8-8ac631d355c7.png" alt="UDinger Logo" class="brand-logo">
                 <div class="brand-info">
                     <h1 class="brand-title">UDinger</h1>
-                    <p class="brand-location">Quantum Computing Consulting & Training | <span class="country-names">Netherlands & India</span></p>
+                    <div class="brand-taglines">
+                        <span class="brand-service">Quantum Computing Consulting & Training</span>
+                        <span class="brand-locations">Netherlands & India</span>
+                    </div>
                 </div>
             </div>
             <div class="nav__menu">
@@ -46,11 +49,11 @@
                 <button class="btn btn--primary" onclick="scrollToSection('contact')">Start Your Journey</button>
                 <!-- Theme Toggle Button -->
                 <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode">
-                    <svg class="theme-toggle__icon theme-toggle__sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <svg class="theme-toggle__icon theme-toggle__sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <circle cx="12" cy="12" r="5"></circle>
                         <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path>
                     </svg>
-                    <svg class="theme-toggle__icon theme-toggle__moon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <svg class="theme-toggle__icon theme-toggle__moon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                     </svg>
                 </button>
@@ -238,9 +241,14 @@
                     </div>
                     
                     <div class="contact-form-container">
-                        <!-- WORKING FORM -->
-                        <form class="contact-form" id="contactForm">
+                        <!-- PROFESSIONAL AUTOMATIC FORM - NO COPY/PASTE -->
+                        <form class="contact-form" action="https://formspree.io/f/xpzqwvgk" method="POST">
                             <h3>Tell Us About Your Business</h3>
+                            
+                            <!-- Hidden fields for Formspree -->
+                            <input type="hidden" name="_subject" value="New Quantum Computing Inquiry - UDinger">
+                            <input type="hidden" name="_next" value="https://udinger.com/thank-you">
+                            <input type="hidden" name="_captcha" value="false">
                             
                             <div class="form-group">
                                 <label for="name">Name *</label>
@@ -249,7 +257,7 @@
                             
                             <div class="form-group">
                                 <label for="email">Email *</label>
-                                <input type="email" id="email" name="email" required>
+                                <input type="email" id="email" name="_replyto" required>
                             </div>
                             
                             <div class="form-group">
@@ -288,7 +296,7 @@
                             
                             <div class="form-group">
                                 <label for="challenges">Current Business Challenges</label>
-                                <textarea id="challenges" name="challenges" rows="3" placeholder="Tell us about your optimization needs, complex problems, or areas where you seek computational advantages..."></textarea>
+                                <textarea id="challenges" name="message" rows="3" placeholder="Tell us about your optimization needs, complex problems, or areas where you seek computational advantages..."></textarea>
                             </div>
                             
                             <div class="form-group">
@@ -304,12 +312,12 @@
                                 </select>
                             </div>
                             
-                            <button type="submit" class="btn btn--primary btn--full" id="submit-button">
+                            <button type="submit" class="btn btn--primary btn--full">
                                 Send My Inquiry
                             </button>
                             
                             <div class="form-note">
-                                <p><small>📧 Your inquiry will be prepared for email delivery to info@udinger.com</small></p>
+                                <p><small>✅ Your inquiry will be sent directly to our team at info@udinger.com</small></p>
                             </div>
                         </form>
                     </div>
@@ -322,7 +330,7 @@
         </section>
     </main>
 
-    <!-- Footer -->
+    <!-- Professional Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -330,7 +338,10 @@
                     <img src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/67afb9d2-8a97-4772-aed8-8ac631d355c7.png" alt="UDinger Logo" class="footer-logo">
                     <div class="footer-info">
                         <span class="footer-text">UDinger</span>
-                        <span class="footer-locations">Quantum Computing Consulting & Training | <span class="country-names-footer">Netherlands & India</span></span>
+                        <div class="footer-taglines">
+                            <span class="footer-service">Quantum Computing Consulting & Training</span>
+                            <span class="footer-locations">Netherlands & India</span>
+                        </div>
                     </div>
                 </div>
                 <div class="footer-contact">
